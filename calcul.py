@@ -31,8 +31,14 @@ def mode_2(mu, sigma, IQstr):
     while (i < iq):
         result += formule_205(i, mu, sigma)
         i += 1
-    print("%.1f" % (result * 100), "% " ,"of people have an IQ inferior to ", iq, sep='')
-    return
+    return result * 100
 
 def mode_3(mu, sigma, IQstr1, IQstr2):
+    prop1 = mode_2(mu, sigma, IQstr1)
+    prop2 = mode_2(mu, sigma, IQstr2)
+
+    result = prop2 - prop1
+
+    print("%.1f" % (result), "% " ,"of people have an IQ between ", IQstr1, " and ", IQstr2, sep='')
+
     return

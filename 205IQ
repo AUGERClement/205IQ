@@ -21,7 +21,8 @@ def redirect(mode, mu, sigma):
     if (mode == 1):
         calcul.mode_1(mu, sigma)
     elif (mode == 2):
-        calcul.mode_2(mu, sigma, sys.argv[3])
+        result = calcul.mode_2(mu, sigma, sys.argv[3])
+        print("%.1f" % result, "% " ,"of people have an IQ inferior to ", sys.argv[3], sep='')
     else:
         calcul.mode_3(mu, sigma, sys.argv[3], sys.argv[4])
     return
