@@ -12,7 +12,7 @@ def parser():
         sigma = int(sys.argv[2])
     except:
         quit (84)
-    if (mu < 0 or sigma <= 0):
+    if (mu < 0 or mu > 200 or sigma <= 0):
         quit (84)
     mode = len(sys.argv) - 2
     return mode, mu, sigma
