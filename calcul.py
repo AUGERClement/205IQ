@@ -23,7 +23,8 @@ def mode_2(mu, sigma, IQstr):
         iq = int(IQstr)
     except:
         quit(84)
-    
+    if (iq < 0):
+        quit (84)
     i = 0
     result = 0.0
 
