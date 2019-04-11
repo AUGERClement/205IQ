@@ -30,7 +30,7 @@ def mode_2(mu, sigma, IQstr):
     while (i < iq):
         result += formule_205(i, mu, sigma)
         i += 1
-    print(result * 100)
+    print("%.1f" % (result * 100), "% " ,"of people have an IQ inferior to ", iq, sep='')
     return
 
 def mode_3(mu, sigma, IQstr1, IQstr2):
