@@ -25,12 +25,13 @@ def mode_2(mu, sigma, IQstr):
         quit(84)
     if (iq < 0):
         quit (84)
-    i = 0
+    i = 0.0
     result = 0.0
+    PAS = 0.0005
 
     while (i < iq):
-        result += formule_205(i, mu, sigma)
-        i += 1
+        result += PAS * (formule_205(i, mu, sigma) + formule_205(i+PAS, mu, sigma)) / 2
+        i += PAS
     return result * 100
 
 def mode_3(mu, sigma, IQstr1, IQstr2):
