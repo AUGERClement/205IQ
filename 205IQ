@@ -2,7 +2,7 @@
 
 from os import sys
 from os import sys
-from calcul import *
+import calcul
 
 def parser():
     if (len(sys.argv) < 3 or len(sys.argv) > 5):
@@ -12,8 +12,20 @@ def parser():
         sigma = int(sys.argv[2])
     except:
         quit (84)
+    if (mu < 0 or sigma < 0):
+        quit (84)
     mode = len(sys.argv) - 2
     return mode, mu, sigma
 
-mod, mu, sigma = parser()
-print(mod, mu, sigma)
+def redirect(mode, mu, sigma):
+    if (mode == 1):
+        calcul.mode_1(mu, sigma)
+    elif (mode == 2):
+        calcul.mode_2(mu, sigma, sys.argv[3])
+    else:
+        calcul.mode_3(mu, sigma, sys.argv[3], sys.argv[4])
+    return
+
+mode, mu, sigma = parser()
+redirect(mode, mu, sigma)
+print(mode, mu, sigma)
