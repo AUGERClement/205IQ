@@ -28,4 +28,3 @@ def redirect(mode, mu, sigma):
 
 mode, mu, sigma = parser()
 redirect(mode, mu, sigma)
-print(mode, mu, sigma)
