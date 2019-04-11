@@ -4,4 +4,16 @@ from os import sys
 from os import sys
 from calcul import *
 
-main():
+def parser():
+    if (len(sys.argv) < 3 or len(sys.argv) > 5):
+        quit (84)
+    try:
+        mu = int(argv[1])
+        sigma = int(argv[2])
+    except:
+        quit (84)
+    mode = len(sys.argv - 2)
+    return mode, mu, sigma
+
+mod, mu, sigma = parser()
+print(mod, mu, sigma)
